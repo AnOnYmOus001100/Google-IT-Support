@@ -1,0 +1,58 @@
+Create/inspect key pair, encrypt/decrypt and sign/verify using OpenSSL :
+==========================================================================
+
+-------------------------<<<Commands Used: >>>----------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+
+# Generating keys:
+---------------------------------------------------------------------------
+	* Generating a private key:
+	--------------------------------
+	> openssl genrsa -out private_key.pem 2048
+	
+	* View private key:
+	----------------------
+	> cat private_key.pem
+
+	* Generating a public key:
+	------------------------------------
+	> openssl rsa -in private_key.pem -outform PEM -pubout -out public_key.pem
+
+	* View public key:
+	------------------
+	> cat public_key.pem
+
+
+# Encrypting and decrypting:
+---------------------------------------------------------------------------
+
+	* Creating a text file secret.txt:
+	-----------------------------------------------
+	> echo 'This is a secret message, for authorized parties only' > secret.txt
+
+	* Encrypting the file using public key:
+	------------------------------------------------------
+	> openssl rsautl -encrypt -pubin -inkey public_key.pem -in secret.txt -out secret.enc
+
+	* view the file:
+	--------------------
+	> cat secret.enc
+
+	* Decrypt the file:
+	----------------------------------
+	> openssl rsautl -decrypt -inkey private_key.pem -in secret.enc
+
+
+# Creating a hash digest:
+---------------------------------------------------------------------------
+	
+	* create hash digest:
+	----------------------
+	> openssl dgst -sha256 -sign private_key.pem -out secret.txt.sha256 secret.txt
+
+	* To verify the the file using public key and hash digest:
+	-----------------------------------------------------------
+	> openssl dgst -sha256 -verify public_key.pem -signature secret.txt.sha256 secret.txt
+

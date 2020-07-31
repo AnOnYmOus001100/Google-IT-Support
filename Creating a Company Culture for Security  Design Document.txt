@@ -1,0 +1,74 @@
+# Authentication:- 
+Authentication can be implemented by  the creating a user account and password by using the biometrics like fingerprints, face scanner or iris scanning. 
+* should use strong password, with the standard password setting guidelines
+
+#External Website security: -
+External Website security can be implemented by using  a temporary token based system, and using SSL 3.0 or TLS 1.3 over HTTP, i.e, using HTTPS. Apart from this account creation using a username/email/user id and password can be done for long term use.
+* Setup firewall and configure rules accordingly.
+* Implement correct access control for regular users and adminstrators
+* keep a monitoring IT team in case of a problem, breach or emergency
+* Make a backup solution, if website goes down due to some reason
+
+# Internal Website security:  
+Internal website security can be implemented by setting up Firewall and configuring correct inbound and outbound rules.
+* Setting up access control list for users and admins
+* Encrypting the website using SSL/TLS and encrypting the communication
+* Using a  authentication system using user id/username/email and password
+* Educating users about security and security policy 
+* keep a monitoring IT team for security in case of any problems, breach or emergency
+* Make a backup solution, if website goes down due to some reason
+
+# Remote Access Solution:-
+Remote Access can be implemented by using some cloud services from some reliable and secure vendor.
+* Remote Virtual machines can be used
+* VPN can be used for security
+* encryption should be used like over SSH
+* Infrastructure as a service, Platform as a service or Software as a service can be used as necessary for Remote access.
+
+# Firewall and Basic rules recommendations: -
+* Only desirable inbound connections are allowed
+* Outbound rules should be configured accordingly
+* New Rules should be added and updated accordingly in case of security issues or breach
+
+# Wireless Security: -
+* WPA2 should be used and not WEP/WPA
+* should never connect to unknown or suspicious wireless access points
+* should use strong passwords
+* never disclose wifi passwords to anyone outside the organization
+* report  any malicious or suspicious activity to the security or IT team
+
+# VLAN configuration: -
+* VLAN web filtering should only allow known known hosts
+* Discard any unknown traffic
+* unwanted traffic should be discarded and denied
+
+# Laptop Security Configuration:-
+For authentication in laptops use strong passwords following the standard password setting guidelines,
+setup Biometric like face unlock or fingerprint if available.
+* Never share login or authentication passwords
+* Always lock screen/shutdown laptop while going away from your laptop
+* Never connect to any unknown network
+* Never write down your Password anywhere 
+
+# Application policy recommendations: -
+* Used strong passwords if password based authentication is available
+* Make sure to check for permissions off the application
+* Always logout of account if using any unknown system
+* Check for HTTPS and the padlock on url bar while visiting any website
+* Make sure the application is following security guidelines and plicies  
+
+# Security and privacy policy recommendations:-
+* Users must always follow security guidelines
+* Strong security policy must be made and followed
+* A security conscious community must be formed
+* In case of security issues or breach, everyone must work together to find the cause and fix the issue, and implement rules, configuration etc. to be applied over the entire organization. Share the security findings with the security team and properly document the cause and remediation steps.
+
+# Intrusion detection or prevention for systems containing customer data:  -
+Intrusion detection system should be correctly configured to match with the requirements of the organization security policy.
+* It should be able to detect any sort of unknown traffic
+* should set up a alert based system, and depending on alert level should alert the concerned person or team 
+* In case of critical alert it should alert the entire security team, IT team.
+
+Intrusion Prevention system should be configured in such a way that so that it should be able to detect the unknown or unwanted traffic and take necessary steps
+* IPS should stop the traffic if the connection is not from any of the known hosts
+* IPS should drop and discard all unwanted traffic and block the traffic

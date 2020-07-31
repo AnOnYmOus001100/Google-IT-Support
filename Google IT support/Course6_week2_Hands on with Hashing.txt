@@ -1,0 +1,92 @@
+Hands on with Hashing :
+===========================================================================
+
+--------------------------<<<Commands used>>>------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+# MD5:
+--------------------------------------------------------------------------
+	
+	* Create a file file.txt with some text data:
+	-----------------------------------------------
+	> echo 'Writing data into file, this a single line file' > file.txt
+
+	* Generate MD5 sum:
+	-----------------------------------------------
+	> md5sum file.txt > file.txt.md5
+
+	* View the MD5 hash:
+	-----------------------------------------------
+	> cat file.txt.md5
+
+	* To verify the hash:
+	-----------------------------------------------
+	> md5sum -c file.txt.md5
+
+
+
+# Verifying an invalid file:
+---------------------------------------------------------------------------
+	
+	* Making a copy of the file file.txt:
+	---------------------------------------
+	> cp file.txt badfile.txt
+
+	* generate a new md5sum for the new file:
+	------------------------------------------
+	> md5sum badfile.txt > badfile.txt.md5
+
+	* check the hash of the new file(badfile.txt.md5) and compare to old file(file.txt.md5):
+------------------------------------------------------------------------
+	> cat badfile.txt.md5
+	> cat file.txt.md5
+
+	* Open Nano editor and add a space to the end of badfile.txt:
+	--------------------------------------------------------------
+	> nano badfile.txt
+
+	* Try verifying the hash again:
+	-------------------------------
+	> md5sum -c badfile.txt.md5
+
+	* To see the difference in hash change, generate a new hash for badefile.txt
+	--------------------------------------------------------------
+	> md5sum badfile.txt > new.badfile.txt.md5
+
+	* View the new hash:
+	--------------------
+	> cat new.badfile.txt.md5
+
+
+# SHA1:
+---------------------------------------------------------------------------
+
+	* Create a SHA1 hash:
+	------------------------------
+	> shasum file.txt > file.txt.sha1
+
+	* To view the SHA1 hash:
+	-----------------------------
+	> cat file.txt.sha1
+
+	* To verify the SHA1 hash:
+	--------------------------
+	> shasum -c file.txt.sha1
+
+
+# SHA256:
+---------------------------------------------------------------------------
+
+	* To create a SHA256 hash:
+	------------------------------
+	> shasum -a 256 file.txt > file.txt.sha256
+
+	* To view the hash:
+	-------------------------------
+	cat file.txt.sha256
+
+	* To verify the SHA256 hash:
+	-------------------------------
+	> shasum -c file.txt.sha256
+
